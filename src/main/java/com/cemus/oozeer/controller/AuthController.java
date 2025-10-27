@@ -4,7 +4,7 @@ package com.cemus.oozeer.controller;
 import com.cemus.oozeer.dto.AuthRequest;
 import com.cemus.oozeer.model.User;
 import com.cemus.oozeer.service.JwtService;
-import com.cemus.oozeer.service.UserService;
+import com.cemus.oozeer.service.UserAuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class AuthController {
     @Autowired
-    private UserService service;
+    private UserAuthService service;
 
     @Autowired
     private JwtService jwtService;
