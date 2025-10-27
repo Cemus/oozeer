@@ -24,12 +24,6 @@ public class AuthController {
     @Autowired
     private AuthenticationManager authenticationManager;
 
-    @RequestMapping("/user")
-    @GetMapping("/profile")
-    public String profile() {
-        return "Nice";
-    }
-
     @GetMapping("/welcome")
     public String welcome() {
         return "Welcome to the public authentication endpoint!";
