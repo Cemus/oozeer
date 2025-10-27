@@ -11,12 +11,12 @@ import java.util.stream.Collectors;
 
 public class UserInfoDetails implements UserDetails {
 
-    private final String username; // Changed from 'name' to 'email' for clarity
+    private final String username;
     private final String password;
     private final List<GrantedAuthority> authorities;
 
     public UserInfoDetails(User user) {
-        this.username = user.getUsername(); // Use email as username
+        this.username = user.getUsername();
         this.password = user.getPassword();
         this.authorities = user.getRoles().stream()
                 .map(role -> new SimpleGrantedAuthority("ROLE_" + role.name()))
