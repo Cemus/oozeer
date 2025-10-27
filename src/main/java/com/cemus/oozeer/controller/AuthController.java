@@ -12,7 +12,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
-@SuppressWarnings("unused")
 @RequestMapping("/auth")
 @RestController
 public class AuthController {
