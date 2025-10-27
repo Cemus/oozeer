@@ -9,6 +9,7 @@ import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Entity
 @Table(name="users")
@@ -89,6 +90,9 @@ public class User extends BaseEntity {
 
     @Override
     public String toString(){
-        return this.getUsername() + " " + this.getEmail() + " " +  this.getRoles();
+        return this.getUsername() + " " + this.getEmail() + " " +  this.getRoles()
+                                                                        .stream()
+                                                                        .map(Role::toString)
+                                                                        .collect(Collectors.joining(", "));
     }
 }
